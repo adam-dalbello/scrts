@@ -12,7 +12,7 @@ keys <- dplyr::bind_cols(
                             data.frame(
                                           item = ls()[3:11]
                                 ),
-                                                        plyr::ldply(empty_vector)
+                                                              plyr::ldply(empty_vector)
   )
 
 #write.csv(keys, 'keys.csv', row.names = FALSE)
