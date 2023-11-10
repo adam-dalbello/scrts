@@ -16,12 +16,13 @@ All that is needed to be remembered is how to decrpyt.
 
 ```r
 
-library(caesar)
-
 # secret information
 x <- 'my'
 y <- 'name'
 
+
+
+library(caesar)
 
 
 empty_vector <- vector('list', length(ls()))
