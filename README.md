@@ -23,9 +23,12 @@ x <- 'my'
 y <- 'name'
 
 
+
 empty_vector <- vector('list', length(ls()))
 
+
 for (i in 3:(length(ls()) + 1)) { empty_vector[[i - 2]] <- caesar(get(ls()[i])) }
+
 
 # keeper
 keys <- dplyr::bind_cols(
