@@ -1,6 +1,6 @@
 # scrts
 
-This is a secrets keeper (or password manager). It takes 9 secrets (e.g., passwords; emails; pin numbers) and encrypts them with a caeser algorithm.
+This is a secrets keeper (or password manager). It takes secrets (e.g., passwords; emails; pin numbers) and encrypts them with a caeser algorithm.
 All that is needed to be remembered is how to decrpyt.
 <br>
 <br>
@@ -18,18 +18,20 @@ All that is needed to be remembered is how to decrpyt.
 
 library(caesar)
 
+x <- 'my'
+y <- 'name'
 
 
-empty_vector <- vector('list', 9) 
+empty_vector <- vector('list', length(ls()))
 
 
-for (i in 3:11) { empty_vector[i - 2] <- get(ls()[i]) }
+for (i in 3:(length(ls()) + 1)) { empty_vector[[i - 2]] <- caesar(get(ls()[i])) }
 
 
 # keeper
 keys <- dplyr::bind_cols(
                             data.frame(
-                                          item = ls()[3:11]
+                                          item = ls()[3:length(ls())]
                             ),
                                                               plyr::ldply(empty_vector)
         )
